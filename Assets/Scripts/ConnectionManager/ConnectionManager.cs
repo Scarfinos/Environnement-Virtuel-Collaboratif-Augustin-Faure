@@ -46,7 +46,7 @@ public class ConnectionManager : MonoBehaviour
         }
     }
 
-   private void OnGUI()
+   private async Task OnGUI()
    {
        if (_state == ConnectionState.Connected)
            return;
@@ -69,7 +69,7 @@ public class ConnectionManager : MonoBehaviour
 
        if (GUILayout.Button("Create or Join Session"))
        {
-           CreateOrJoinSessionAsync();
+           await CreateOrJoinSessionAsync();
        }
    }
 

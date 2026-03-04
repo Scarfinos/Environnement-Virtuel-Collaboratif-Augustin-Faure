@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: NetworkConfig.PlayerPrefab
       value: 
       objectReference: {fileID: 1416698304983688047, guid: 438bf1803230e7d4b8f8cc211db41264, type: 3}
+    - target: {fileID: 3388547583327927964, guid: c39557f8737ad854b8cda04c990ed41a, type: 3}
+      propertyPath: ConnectionData.Address
+      value: 10.129.164.118
+      objectReference: {fileID: 0}
     - target: {fileID: 3652993518260706096, guid: c39557f8737ad854b8cda04c990ed41a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

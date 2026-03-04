@@ -10,7 +10,7 @@ public class NetworkedXRGrabInteractable : NetworkBehaviour {
     protected Renderer colorRenderer;
     protected bool caught = false;
 
-    public virtual new void Start() {
+    public virtual void Start() {
         networkObject = (NetworkObject)GameObject.FindFirstObjectByType(typeof(NetworkObject));
         colorRenderer = GetComponentInChildren<Renderer>();
         initialColor = colorRenderer.material.color;
@@ -20,6 +20,16 @@ public class NetworkedXRGrabInteractable : NetworkBehaviour {
     public NetworkVariable<Color> CubeColor = new NetworkVariable<Color>(
         Color.white, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner
     );
+
+    public override void OnNetworkSpawn()
+    {
+        CubeColor.OnValueChanged += (oldColor, newColor) =>
+        {
+            colorRenderer.material.color = newColor;
+        };
+
+        colorRenderer.material.color = CubeColor.Value;
+    }
 
     public virtual void LocalCatch() {
         print ("LocalCatch");
