@@ -1,29 +1,28 @@
 using UnityEngine;
 using Unity.Netcode;
-using Unity.Netcode.Components;
 
-public class CursorDriver : NetworkBehaviour {
-    private bool active ;
+public class CursorDriverOldInput : NetworkBehaviour
+{
+    private bool active;
     private Camera theCamera ;
     public GameObject ObjectToCreate;
 
     private static readonly Color[] rainbowColors = new Color[]
-        {
-            Color.red,
-            new Color(1f, 0.5f, 0f), // orange
-            Color.yellow,
-            Color.green,
-            Color.blue,
-            new Color(0f, 0.8f, 0.8f), // indigo
-            new Color(0.56f, 0f, 1f)     // violet
-        };
-
+    {
+        Color.red,
+        new Color(1f, 0.5f, 0f), // orange
+        Color.yellow,
+        Color.green,
+        Color.blue,
+        new Color(0f, 0.8f, 0.8f), // indigo
+        new Color(0.56f, 0f, 1f)     // violet
+    };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start () {
         if (HasAuthority && IsSpawned) {
-            theCamera = (Camera)GameObject.FindFirstObjectByType (typeof(Camera)) ;    
-            active = false ;
+            theCamera = (Camera)GameObject.FindFirstObjectByType (typeof(Camera));
+            active = false;
         }
     }
 
@@ -49,20 +48,25 @@ public class CursorDriver : NetworkBehaviour {
         }
 
         if (Input.GetKeyDown (KeyCode.O)) {
-            Debug.Log ("Spawn requested") ;
-            var myNewCube = Instantiate (ObjectToCreate) ;
-            var myNetworkedNewCube = myNewCube.GetComponent<NetworkObject> () ;
-                
-            Vector3 newPosition = transform.position + transform.forward * 2.0f + transform.up * 1.0f;
-            myNewCube.transform.position = newPosition ;
-
-            Color chosenColor = rainbowColors[Random.Range(0, rainbowColors.Length)];
-            var renderer = myNewCube.GetComponent<Renderer>();
-            if (renderer != null) {
-                renderer.material.color = chosenColor;
-            }
-
-            myNetworkedNewCube.Spawn () ;
+            SpawnCube();
         }
+    }
+
+    private void SpawnCube()
+    {
+        Debug.Log("Spawn requested");
+
+        var myNewCube = Instantiate(ObjectToCreate);
+        var myNetworkedNewCube = myNewCube.GetComponent<NetworkObject>();
+
+        Vector3 newPosition = transform.position + transform.forward * 2f + transform.up * 1f;
+        myNewCube.transform.position = newPosition;
+
+        Color chosenColor = rainbowColors[Random.Range(0, rainbowColors.Length)];
+        var renderer = myNewCube.GetComponent<Renderer>();
+        if (renderer != null)
+            renderer.material.color = chosenColor;
+
+        myNetworkedNewCube.Spawn();
     }
 }

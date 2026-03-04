@@ -141,6 +141,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorDriver
   ShowTopMostFoldoutHeaderGroup: 1
+  altModifier:
+    m_Name: Alt Modifier
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ee048353-aac1-46aa-8291-caf2904ca53f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f6cb920e-70b1-4f00-a9c2-073b5eb70723
+      m_Path: <Keyboard>/leftAlt
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Alt Modifier
+      m_Flags: 0
+    m_Flags: 0
+  mousePosition:
+    m_Name: Mouse Position
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: df2535fb-36f6-4512-b35e-7b49db21d65b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 42c1f78b-8125-4c15-9300-4e98ee6f84c6
+      m_Path: <Mouse>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Position
+      m_Flags: 0
+    m_Flags: 0
+  mouseScroll:
+    m_Name: Mouse Scroll
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0b537b92-3a11-49f8-a902-2de8eebedcf6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 682c4344-415d-4892-bb3e-a7bfe50c9055
+      m_Path: <Mouse>/scroll
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Scroll
+      m_Flags: 0
+    m_Flags: 0
+  spawnAction:
+    m_Name: Spawn
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 78982158-e22d-49b2-b929-d38c7aa0d779
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 13c2cdfa-0dde-455f-8c18-a39e81f70222
+      m_Path: <Keyboard>/o
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Spawn
+      m_Flags: 0
+    m_Flags: 0
   ObjectToCreate: {fileID: 2838285146492678365, guid: c78bffc1042fa9b41978bb7cd1c435dc, type: 3}
 --- !u!114 &322467477663804800
 MonoBehaviour:
@@ -190,7 +258,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 157d517e-582f-4a47-95e9-132e345cad87
+        m_Id: 7f38c902-072a-4b7b-a63a-406c9432081f
         m_Path: <Mouse>/leftButton
         m_Interactions: 
         m_Processors: 
@@ -228,7 +296,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: de623f3c-ebc0-4af8-8a74-641c73b03a68
+        m_Id: 8fa4f1fc-a3be-44ba-bfd0-c30557f27f7c
         m_Path: <Mouse>/rightButton
         m_Interactions: 
         m_Processors: 
@@ -310,7 +378,7 @@ GameObject:
   - component: {fileID: 6142093515236317485}
   - component: {fileID: 120064572714633513}
   - component: {fileID: 256466012080863831}
-  - component: {fileID: 6821240768239217953}
+  - component: {fileID: 7861344394308067123}
   m_Layer: 0
   m_Name: NetworkedPlayer
   m_TagString: Untagged
@@ -426,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1048012996
+  GlobalObjectIdHash: 3982810658
   InScenePlacedSourceGlobalObjectIdHash: 3982810658
   DeferredDespawnTick: 0
   Ownership: 0
@@ -439,7 +507,7 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &6821240768239217953
+--- !u!114 &7861344394308067123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,6 +556,123 @@ MonoBehaviour:
   PlayerControllerPropertiesVisible: 1
   Speed: 10
   ApplyVerticalInputToZAxis: 0
+  ObjectToCreate: {fileID: 2838285146492678365, guid: c78bffc1042fa9b41978bb7cd1c435dc, type: 3}
+  moveForward:
+    m_Name: Move Forward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b737be70-ab0f-4afa-b57a-780d73175782
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 42bf2d40-0b59-4d72-9e30-beb323a5f1a7
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Forward
+      m_Flags: 0
+    - m_Name: 
+      m_Id: cd755fe7-098b-4761-bda9-5d167f28191a
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Forward
+      m_Flags: 0
+    m_Flags: 0
+  moveBackward:
+    m_Name: Move Backward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a076ccbe-7199-4844-974d-1a35ea7f4c93
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e20dbce1-7677-4e49-b761-769908c50c0a
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Backward
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 1b3a99fd-a6a1-4520-aa88-8864a11b3eab
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Backward
+      m_Flags: 0
+    m_Flags: 0
+  turnLeft:
+    m_Name: Turn Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5d6b5fd3-2298-4cca-958e-9a31ae2918e0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b8541577-9595-4cbb-9d8e-c82927a2b8eb
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Left
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d3dbfb0a-1a34-439b-a056-69d1ac35dc8f
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Left
+      m_Flags: 0
+    m_Flags: 0
+  turnRight:
+    m_Name: Turn Right
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e843b575-1591-4361-83ca-ba5428eb2fbf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ea9be2bb-a3e8-4369-a12e-7e4d221bb55c
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Right
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 6d9be77b-aee5-4904-884e-7e6bbe26fd94
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Right
+      m_Flags: 0
+    m_Flags: 0
+  spawnAction:
+    m_Name: Spawn
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ab41a112-5ab2-44bd-a18a-f9b098f43f10
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a15e6b75-9dd1-47ca-9f83-ad8ad5205268
+      m_Path: <Keyboard>/p
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Spawn
+      m_Flags: 0
+    m_Flags: 0
   cameraPositionOffset: {x: 0, y: 1.6, z: 0}
   cameraOrientationOffset: {x: 0, y: 0, z: 0, w: 0}
-  ObjectToCreate: {fileID: 2838285146492678365, guid: c78bffc1042fa9b41978bb7cd1c435dc, type: 3}

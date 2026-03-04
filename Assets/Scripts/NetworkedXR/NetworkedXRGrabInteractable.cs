@@ -17,20 +17,6 @@ public class NetworkedXRGrabInteractable : NetworkBehaviour {
         rb = GetComponent<Rigidbody> ();
     }
 
-    public NetworkVariable<Color> CubeColor = new NetworkVariable<Color>(
-        Color.white, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner
-    );
-
-    public override void OnNetworkSpawn()
-    {
-        CubeColor.OnValueChanged += (oldColor, newColor) =>
-        {
-            colorRenderer.material.color = newColor;
-        };
-
-        colorRenderer.material.color = CubeColor.Value;
-    }
-
     public virtual void LocalCatch() {
         print ("LocalCatch");
         if (!caught) {
