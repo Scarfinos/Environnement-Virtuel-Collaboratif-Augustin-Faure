@@ -981,7 +981,7 @@ MonoBehaviour:
     m_InputActionReference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: {x: 0, y: 0}
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_HeadTransform: {fileID: 4395950674669173359}
   m_LeftControllerTransform: {fileID: 4820443962044832939}
   m_RightControllerTransform: {fileID: 1571481475410769839}
